@@ -1,0 +1,26 @@
+{
+  "GitHub": {
+    "url": "https://github.com/",
+    // authorize config
+    "loginUrl":"login/oauth/authorize",
+    "tokenUrl": "login/oauth/access_token",
+    "callbackUrl": "http://docfx-qinezh.cloudapp.net/signin/github-callback",
+    // application config
+    "appId": "5873b35630bff33bdd5e",
+    "secret": "35b84abc28bebf1820d75af69dab4681bce7801e",
+    "scope": "user, write:repo_hook",
+    // webhook config
+    "hookUrl": "http://docfx-qinezh.cloudapp.net/webhook",
+    "contentType": "json"
+  },
+  "ElasticSearch": {
+    "host": "localhost:9200",
+    "logType": "debug",
+    "index": "staticsite", 
+    "type": "docs"
+  },
+  "Session": {
+    "secret": "Qinezh",
+    "key": "sid"
+  }
+}

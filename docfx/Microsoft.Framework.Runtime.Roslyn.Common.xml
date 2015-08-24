@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Framework.Runtime.Roslyn.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationException">
+            <summary>
+            An implementation of <see cref="T:Microsoft.Framework.Runtime.ICompilationException"/> representing Roslyn compilation exceptions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationException.#ctor(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic},System.Runtime.Versioning.FrameworkName)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationException"/>.
+            </summary>
+            <param name="assemblyName">The assembly that produced the compilation exception.</param>
+            <param name="diagnostics">Diagnostics from Roslyn compilation.</param>
+            <param name="targetFramework">Target framework the compilation exection is thrown from.</param>
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationException.Diagnostics">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Microsoft.CodeAnalysis.Diagnostic"/> from Roslyn compilation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationException.CompilationFailures">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure">
+            <summary>
+            An implementation of <see cref="T:Microsoft.Framework.Runtime.ICompilationFailure"/> for Roslyn compilation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure.#ctor(System.Collections.Generic.IEnumerable{Microsoft.CodeAnalysis.Diagnostic})">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure"/>.
+            </summary>
+            <param name="diagnostics">A sequence of <see cref="T:Microsoft.CodeAnalysis.Diagnostic"/>s from Roslyn compilation.</param>
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure.Messages">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure.SourceFilePath">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure.SourceFileContent">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationFailure.CompiledContent">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage">
+            <summary>
+            An implementation of <see cref="T:Microsoft.Framework.Runtime.ICompilationMessage"/> that wraps 
+            <see cref="T:Microsoft.CodeAnalysis.Diagnostic"/> instances from Roslyn compilation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.#ctor(Microsoft.CodeAnalysis.Diagnostic)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage"/>.
+            </summary>
+            <param name="diagnostic">The <see cref="T:Microsoft.CodeAnalysis.Diagnostic"/> instance to read
+            diagnostic details from.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.#ctor(Microsoft.CodeAnalysis.Diagnostic,System.Runtime.Versioning.FrameworkName)" -->
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.SourceFilePath">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.Severity">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.EndColumn">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.EndLine">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.Message">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.FormattedMessage">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.StartColumn">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.StartLine">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Roslyn.RoslynCompilationMessage.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Framework.Runtime.Common.DependencyInjection.ActivatorUtilities">
+            <summary>
+            Helper code for the various activator services.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Common.DependencyInjection.ActivatorUtilities.GetServiceOrCreateInstance(System.IServiceProvider,System.Type)">
+            <summary>
+            Retrieve an instance of the given type from the service provider. If one is not found then instantiate it directly.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Common.DependencyInjection.ActivatorUtilities.CreateInstance(System.IServiceProvider,System.Type)">
+            <summary>
+            Instantiate an object of the given type, using constructor service injection if possible.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Common.DependencyInjection.ActivatorUtilities.CreateInstance``1(System.IServiceProvider)">
+            <summary>
+            Instantiate an object of the given type, using constructor service injection if possible.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.Runtime.Common.DependencyInjection.ActivatorUtilities.CreateFactory(System.Type)">
+            <summary>
+            Creates a factory to instantiate a type using constructor service injection if possible.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

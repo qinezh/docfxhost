@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    title= title
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+      block navbar
+        nav.navbar.navbar-default
+          div.container-fluid
+            div.navbar-header
+              button(type="button", class="navbar-toggle collapsed",
+                  data-toggle="collapse", data-target="#bs-example-navbar-collapse-1",
+                  aria-expanded="false")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a(class='navbar-brand', href="/") Docfx
+            div.collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a(href="/about") About
+                if user
+                  li.dropdown
+                    a(href="#", class="dropdown-toggle", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+                      img(src=user.avatar_url, class="img-rounded")
+                      #{user.name}
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(type="button", href="#", data-toggle="modal", data-target="#myModal") Create
+                      li
+                        a(type="button", href="/logout") Logout
+                else
+                  li
+                    a(href="#", type="button", class="btn", id="popup") Sign in
+                <!-- Modal -->
+                div(class="modal fade", id="myModal" role="dialog")
+                  div.modal-dialog
+                    <!-- Modal content-->
+                    div.modal-content
+                      div.modal-header
+                        button(type="button", class="close", data-dismiss="modal")
+                          span(aria-hidden="true") &times;
+                          span.sr-only Close
+                        h4.modal-title Please Choose your repo for building
+                      div.modal-body
+                        form(role="form", action="/createhooks")
+                          if repos
+                            each repo in repos
+                              div.checkbox
+                                label
+                                  input(type="checkbox", class="radio", value=1, name=repo)
+                                  p #{repo}
+                            button(type="submit", class="btn btn-primary pull-right") Submit
+                      <!-- Modal content-->
+                      div.modal-footer
+                        //button(type="button", class="btn btn-default", data-dismiss="modal") Close
+                        //input(type="submit", class="btn btn-success", id="submit", value="Create")
+      block content
+      footer.footer
+        div.container
+          span Copyright © 2015 Microsoft
+            br
+            p Powered by Doc-as-Code
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+    script(src="//code.jquery.com/ui/1.11.4/jquery-ui.js")
+    script(src="/javascripts/local.js")
+    // script(src="/javascripts/autocomplete.js")

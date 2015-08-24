@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .container
+    h1 Search Results
+    if results.length > 0
+      table.table
+        thead
+          tr
+            th Docs Project
+            th Docs Name
+        tbody
+          each item in results
+            tr
+              td #{item.belongs}
+              td
+                a(href=item.href) #{item.display}
+    else
+      div.alert.alert-info No result exists, please replace keywords and search again.

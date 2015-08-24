@@ -1,0 +1,141 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 55%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  border-top: 1px solid #e7e7e7;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+/*.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}*/
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+.modal {
+  text-align: center;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.form-search {
+  position: relative;
+  width: 53%;
+  height: 40px;
+  padding: 0;
+  margin: 0 auto;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.site-search {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 80%;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: 300;
+  font-size: 18px;
+  background: none;
+}
+
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+button.pull-right {
+  margin-top: 25px;
+}
+
+.img-rounded {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+}

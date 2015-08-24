@@ -1,0 +1,14 @@
+# logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directory
+node_modules
+
+# visual studio code setting
+.settings
+
+# docs
+docs/*/*
+projs/*/*
